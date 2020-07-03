@@ -43,12 +43,12 @@ class Authentication
 
         $userBdd = $this->userRepository->findBy($this->getIdentifier(), $user->getUsername());
 
-        if (empty($userBdd) && $userBdd[0]->getId() === null) {
+        if (empty($userBdd) && $userBdd->getId() === null) {
             $errors[] = Error::getError(Error::LOGIN_NOT_FOUND);
             return $errors;
         }
 
-        if (!password_verify($user->getPassword(), $userBdd[0]->getPassword()))
+        if (!password_verify($user->getPassword(), $userBdd->getPassword()))
             $errors[] = Error::getError(Error::LOGIN_PASSWORD_NOT_FOUND);
 
         if (empty($errors))

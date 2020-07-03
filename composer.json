@@ -1,14 +1,19 @@
 {
     "name": "britzel/security",
-    "version": "0.1.0",
+    "version": "v0.1.1",
+    "type": "library",
     "description": "User, role, sign-in, sign-up",
     "license": "MIT",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Britzel",
             "email": "britzel99@gmail.com"
         }
     ],
+    "require": {
+        "php": ">=7.2"
+    },
     "autoload": {
         "psr-4": {
             "Britzel\\Security\\": "src/"
@@ -18,8 +23,5 @@
         "psr-4": {
             "Britzel\\Security\\Tests\\": "tests/"
         }
-    },
-    "require": {
-        "php": "^7.2"
     }
 }
