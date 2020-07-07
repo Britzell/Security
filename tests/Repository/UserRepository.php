@@ -15,6 +15,15 @@ class UserRepository
         $user->setId(1);
         $user->setEmail('ok@google.com');
         $user->setPassword('$2y$10$lH1dl1MvuTj46UhTazNIue0pAd8NccQ023vEx81grPJ9DmO48Tz8e');
+        return [$user];
+    }
+
+    public function findOneBy(string $criteria, string $value)
+    {
+        $user = new User();
+        $user->setId(1);
+        $user->setEmail('ok@google.com');
+        $user->setPassword('$2y$10$lH1dl1MvuTj46UhTazNIue0pAd8NccQ023vEx81grPJ9DmO48Tz8e');
         return $user;
     }
 

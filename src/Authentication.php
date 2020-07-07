@@ -41,7 +41,7 @@ class Authentication
         if (!empty($errors))
             return $errors;
 
-        $userBdd = $this->userRepository->findBy($this->getIdentifier(), $user->getUsername());
+        $userBdd = $this->userRepository->findOneBy($this->getIdentifier(), $user->getUsername());
 
         if (empty($userBdd) && $userBdd->getId() === null) {
             $errors[] = Error::getError(Error::LOGIN_NOT_FOUND);
